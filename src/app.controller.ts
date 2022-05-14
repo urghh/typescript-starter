@@ -13,10 +13,7 @@ export class AppController {
 
   @Get("/comments")
   getHello(@Req() test: Request): string {
-    const fs = require('fs');
-    const text = 'test';
-    fs.writeFileSync("target.txt", '\ufeff' + text, {encoding: 'utf8'});
-    return test.query.test + "\t" +text;
+    return "test" + test.query.val;
   }
 
   @Post("/post")
